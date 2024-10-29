@@ -1,13 +1,11 @@
 USE [API]
 GO
 
-/****** Object:  Table [dbo].[Company]    Script Date: 10/29/2024 6:40:34 PM ******/
+/****** Object:  Table [dbo].[Company]    Script Date: 10/29/2024 7:56:10 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 CREATE TABLE [dbo].[Company](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NULL,
@@ -17,5 +15,8 @@ CREATE TABLE [dbo].[Company](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET IDENTITY_INSERT [dbo].[Company] ON 
 
-
+INSERT [dbo].[Company] ([ID], [Name]) VALUES (1, N'Company1')
+SET IDENTITY_INSERT [dbo].[Company] OFF
+GO
