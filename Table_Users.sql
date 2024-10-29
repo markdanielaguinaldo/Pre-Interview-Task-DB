@@ -1,7 +1,7 @@
 USE [API]
 GO
 
-/****** Object:  Table [dbo].[Users]    Script Date: 10/29/2024 6:49:25 PM ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 10/29/2024 7:48:21 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -11,9 +11,10 @@ GO
 CREATE TABLE [dbo].[Users](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[Username] [nvarchar](50) NULL,
-	[Password] [nvarchar](50) NULL,
+	[Password] [nvarchar](256) NULL,
 	[Company] [int] NULL,
 	[IsAdmin] [bit] NOT NULL,
+	[Salt] [nvarchar](50) NULL,
  CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
